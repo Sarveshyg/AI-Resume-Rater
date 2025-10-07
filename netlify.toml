@@ -1,10 +1,14 @@
-# Netlify Build Settings
+# Netlify Build Settings for PRODUCTION builds
 [build]
-command = "npm run build"
-publish = "build/client"
+  command = "npm run build"
+  publish = "build/client"
 
-# SPA Redirect Rule
+# NEW: Settings for Preview/Development servers
+[dev]
+  command = "npm run dev"
+
+# SPA Redirect Rule (still needed for production)
 [[redirects]]
-from = "/*"
-to = "/index.html"
-status = 200
+  from = "/*"
+  to = "/index.html"
+  status = 200
