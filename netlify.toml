@@ -1,16 +1,10 @@
 # Netlify Build Settings
 [build]
-  command = "npm run build"
+command = "npm run build"
+publish = "build/client"
 
-  # The `react-router build` command outputs to `build/client`.
-  publish = "build/client"
-
+# SPA Redirect Rule
 [[redirects]]
-  # Match any path that the server can't find.
-  from = "/*"
-
-  # Serve the main index.html file instead.
-  to = "/index.html"
-
-  # Use a 200 status code to show the content without changing the URL.
-  status = 200
+from = "/*"
+to = "/index.html"
+status = 200
