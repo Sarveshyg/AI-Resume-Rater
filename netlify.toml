@@ -14,5 +14,5 @@
 # It tells Netlify to send all page requests to your Remix server function.
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/server"
+  to = "/.netlify/functions/index"
   status = 200
