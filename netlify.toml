@@ -1,0 +1,16 @@
+# Netlify Build Settings
+[build]
+  command = "npm run build"
+
+  # The `react-router build` command outputs to `build/client`.
+  publish = "build/client"
+
+[[redirects]]
+  # Match any path that the server can't find.
+  from = "/*"
+
+  # Serve the main index.html file instead.
+  to = "/index.html"
+
+  # Use a 200 status code to show the content without changing the URL.
+  status = 200
