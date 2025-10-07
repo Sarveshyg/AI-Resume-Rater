@@ -3,12 +3,6 @@
   command = "npm run build"
   publish = "build/client"
 
-# NEW: Settings for Preview/Development servers
+# Settings for Preview/Development servers
 [dev]
   command = "npm run dev"
-
-# SPA Redirect Rule (still needed for production)
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
