@@ -1,8 +1,18 @@
-# Netlify Build Settings for PRODUCTION builds
+# Correct Netlify settings for a Remix (SSR) application
+
 [build]
+  # This command builds both the client and server bundles. It's correct.
   command = "npm run build"
+
+  # This is the directory for your serverless function that Remix builds.
+  functions = "build/server"
+
+  # This is the directory for your static assets (CSS, JS, etc.).
   publish = "build/client"
 
-# Settings for Preview/Development servers
-[dev]
-  command = "npm run dev"
+# This rule is the most important part.
+# It tells Netlify to send all page requests to your Remix server function.
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
